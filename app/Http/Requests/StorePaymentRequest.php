@@ -17,20 +17,20 @@ class StorePaymentRequest extends FormRequest
     public function rules()
     {
         return [
-            'service_id'        => [
+            'service_id'       => [
                 'required',
                 'integer',
             ],
-            'amount'            => [
+            'client_id'        => [
                 'required',
+                'integer',
             ],
-            'payment_for_month' => [
+            'payment_due_date' => [
                 'required',
                 'date_format:' . config('panel.date_format'),
             ],
-            'client_id'         => [
+            'amount'           => [
                 'required',
-                'integer',
             ],
         ];
     }

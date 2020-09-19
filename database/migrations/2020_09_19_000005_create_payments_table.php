@@ -11,7 +11,8 @@ class CreatePaymentsTable extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
             $table->decimal('amount', 15, 2);
-            $table->date('payment_for_month');
+            $table->date('payment_due_date');
+            $table->string('status')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

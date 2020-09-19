@@ -6,8 +6,8 @@ return [
         'title_singular' => 'User management',
     ],
     'permission'     => [
-        'title'          => 'Permissions',
-        'title_singular' => 'Permission',
+        'title'          => 'Թույլտվություններ',
+        'title_singular' => 'Թույլտվություն',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => ' ',
@@ -22,8 +22,8 @@ return [
         ],
     ],
     'role'           => [
-        'title'          => 'Roles',
-        'title_singular' => 'Role',
+        'title'          => 'Դերեր',
+        'title_singular' => 'Դերը',
         'fields'         => [
             'id'                 => 'ID',
             'id_helper'          => ' ',
@@ -40,8 +40,8 @@ return [
         ],
     ],
     'user'           => [
-        'title'          => 'Users',
-        'title_singular' => 'User',
+        'title'          => 'Օգտատերեր',
+        'title_singular' => 'Օգտատեր',
         'fields'         => [
             'id'                       => 'ID',
             'id_helper'                => ' ',

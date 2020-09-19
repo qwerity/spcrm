@@ -13,14 +13,14 @@ class Service extends Model
 
     public $table = 'services';
 
-    const TYPE_RADIO = [
-        'komunal' => 'Կոմունալ',
-    ];
-
     protected $dates = [
         'created_at',
         'updated_at',
         'deleted_at',
+    ];
+
+    const TYPE_RADIO = [
+        'Համատիրություն' => 'Համատիրություն',
     ];
 
     protected $fillable = [
