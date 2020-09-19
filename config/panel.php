@@ -7,5 +7,6 @@ return [
     'available_languages' => [
         'en' => 'English',
         'ru' => 'Russian',
+        'am' => 'Armenian',
     ],
 ];

@@ -15,17 +15,23 @@ class Payment extends Model
     public $table = 'payments';
 
     protected $dates = [
-        'payment_for_month',
+        'payment_due_date',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
+    const STATUS_SELECT = [
+        'Վճարված'        => 'Վճարված',
+        'Վճարման ենթակա' => 'Վճարման ենթակա',
+    ];
+
     protected $fillable = [
         'service_id',
-        'amount',
-        'payment_for_month',
         'client_id',
+        'payment_due_date',
+        'amount',
+        'status',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -42,19 +48,19 @@ class Payment extends Model
         return $this->belongsTo(Service::class, 'service_id');
     }
 
-    public function getPaymentForMonthAttribute($value)
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
+    }
+
+    public function getPaymentDueDateAttribute($value)
     {
         return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
     }
 
-    public function setPaymentForMonthAttribute($value)
+    public function setPaymentDueDateAttribute($value)
     {
-        $this->attributes['payment_for_month'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
-    }
-
-    public function client()
-    {
-        return $this->belongsTo(Client::class, 'client_id');
+        $this->attributes['payment_due_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     public function created_by()

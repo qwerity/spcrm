@@ -67,16 +67,6 @@
                 </a>
             </li>
         @endcan
-        @can('payment_access')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.payments.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/payments") || request()->is("admin/payments/*") ? "active" : "" }}">
-                    <i class="fa-fw fas fa-money-bill c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.payment.title') }}
-                </a>
-            </li>
-        @endcan
         @can('client_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.clients.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/clients") || request()->is("admin/clients/*") ? "active" : "" }}">
@@ -84,6 +74,16 @@
 
                     </i>
                     {{ trans('cruds.client.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('payment_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.payments.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/payments") || request()->is("admin/payments/*") ? "active" : "" }}">
+                    <i class="fa-fw fas fa-money-bill c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.payment.title') }}
                 </a>
             </li>
         @endcan

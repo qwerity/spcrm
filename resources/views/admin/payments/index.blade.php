@@ -25,6 +25,9 @@
                         {{ trans('cruds.payment.fields.id') }}
                     </th>
                     <th>
+                        {{ trans('cruds.payment.fields.service') }}
+                    </th>
+                    <th>
                         {{ trans('cruds.payment.fields.client') }}
                     </th>
                     <th>
@@ -34,13 +37,13 @@
                         {{ trans('cruds.client.fields.last_name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.payment.fields.service') }}
+                        {{ trans('cruds.payment.fields.payment_due_date') }}
                     </th>
                     <th>
                         {{ trans('cruds.payment.fields.amount') }}
                     </th>
                     <th>
-                        {{ trans('cruds.payment.fields.payment_for_month') }}
+                        {{ trans('cruds.payment.fields.status') }}
                     </th>
                     <th>
                         &nbsp;
@@ -99,12 +102,13 @@
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },
+{ data: 'service_type', name: 'service.type' },
 { data: 'client_cid', name: 'client.cid' },
 { data: 'client.first_name', name: 'client.first_name' },
 { data: 'client.last_name', name: 'client.last_name' },
-{ data: 'service_type', name: 'service.type' },
+{ data: 'payment_due_date', name: 'payment_due_date' },
 { data: 'amount', name: 'amount' },
-{ data: 'payment_for_month', name: 'payment_for_month' },
+{ data: 'status', name: 'status' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,

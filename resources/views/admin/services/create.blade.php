@@ -13,7 +13,7 @@
                 <label class="required">{{ trans('cruds.service.fields.type') }}</label>
                 @foreach(App\Service::TYPE_RADIO as $key => $label)
                     <div class="form-check {{ $errors->has('type') ? 'is-invalid' : '' }}">
-                        <input class="form-check-input" type="radio" id="type_{{ $key }}" name="type" value="{{ $key }}" {{ old('type', 'komunal') === (string) $key ? 'checked' : '' }} required>
+                        <input class="form-check-input" type="radio" id="type_{{ $key }}" name="type" value="{{ $key }}" {{ old('type', 'Համատիրություն') === (string) $key ? 'checked' : '' }} required>
                         <label class="form-check-label" for="type_{{ $key }}">{{ $label }}</label>
                     </div>
                 @endforeach

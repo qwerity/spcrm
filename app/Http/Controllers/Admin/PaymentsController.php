@@ -49,10 +49,6 @@ class PaymentsController extends Controller
                 return $row->service ? $row->service->type : '';
             });
 
-            $table->editColumn('amount', function ($row) {
-                return $row->amount ? $row->amount : "";
-            });
-
             $table->addColumn('client_cid', function ($row) {
                 return $row->client ? $row->client->cid : '';
             });
@@ -62,6 +58,13 @@ class PaymentsController extends Controller
             });
             $table->editColumn('client.last_name', function ($row) {
                 return $row->client ? (is_string($row->client) ? $row->client : $row->client->last_name) : '';
+            });
+
+            $table->editColumn('amount', function ($row) {
+                return $row->amount ? $row->amount : "";
+            });
+            $table->editColumn('status', function ($row) {
+                return $row->status ? Payment::STATUS_SELECT[$row->status] : '';
             });
 
             $table->rawColumns(['actions', 'placeholder', 'service', 'client']);

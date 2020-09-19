@@ -25,6 +25,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.payment.fields.service') }}
+                        </th>
+                        <td>
+                            {{ $payment->service->type ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.payment.fields.client') }}
                         </th>
                         <td>
@@ -33,10 +41,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.payment.fields.service') }}
+                            {{ trans('cruds.payment.fields.payment_due_date') }}
                         </th>
                         <td>
-                            {{ $payment->service->type ?? '' }}
+                            {{ $payment->payment_due_date }}
                         </td>
                     </tr>
                     <tr>
@@ -49,10 +57,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.payment.fields.payment_for_month') }}
+                            {{ trans('cruds.payment.fields.status') }}
                         </th>
                         <td>
-                            {{ $payment->payment_for_month }}
+                            {{ App\Payment::STATUS_SELECT[$payment->status] ?? '' }}
                         </td>
                     </tr>
                 </tbody>
